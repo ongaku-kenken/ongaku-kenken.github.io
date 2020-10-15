@@ -7,28 +7,31 @@
     <title>地域につたわる音楽に親しもう！</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
-        <style>
-            .jumbotron {
-                background-image: url(https://lh3.googleusercontent.com/0I7sY9S1lmMONPz57YL7JzC6WBKdTr6U408GXXwNbCX9KjU-ADrM5KYP18vjQo9OlZIIBs79LhsaWQr3cTOAwLa1RnvaBEodjv6Rwc5S-FKhB1__tziahywskTCf4f40nYcO1yUD5w);
-                color: orange;
-                text-shadow:1px 0 10px black;
-            }
-        </style>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <style>
+        .jumbotron {
+            background-image: url(https://lh3.googleusercontent.com/0I7sY9S1lmMONPz57YL7JzC6WBKdTr6U408GXXwNbCX9KjU-ADrM5KYP18vjQo9OlZIIBs79LhsaWQr3cTOAwLa1RnvaBEodjv6Rwc5S-FKhB1__tziahywskTCf4f40nYcO1yUD5w);
+            color: orange;
+            text-shadow: 1px 0 10px black;
+        }
+    </style>
 </head>
 
 <body>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h2 class="display-4">地域に伝わる音楽にしたしもう！</h2>
+            <h2 class="display-4">地域に伝わる音楽にしたしもう！</h2>
         </div>
-      </div>
+    </div>
+    <form action="#">
+        <input type="text" name="search" value="" id="search" />
+    </form>
     <table class="table table-striped text-nowrap">
         <tbody>
         </tbody>
     </table>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.4.0/jquery.quicksearch.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -39,7 +42,7 @@
         $(function () {
             $.getJSON("https://script.google.com/macros/s/AKfycbwwxRpMYGs6gx7bQbUIfF1seUYyjIJ1E9HU4vLf5Y2mNGuW96ys/exec", function (ongakudata) {
                 for (var i in ongakudata) {
-                    var table = '<tr class="border">'
+                    var table = '<tr class="border　search-target">'
                         + '<td scope="row">' + ongakudata[i].pref_name + '</td>'
                         + '<td>' + ongakudata[i].song_title + '</td>'
                         + '<td>' + ongakudata[i].playing_type + '</td>'
@@ -55,7 +58,11 @@
             });
         });
     </script>
-
+    <script>
+        $(function () {
+            $('input#search').quicksearch('table tbody tr');
+        });
+    </script>
 </body>
 
 </html>
