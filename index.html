@@ -17,6 +17,15 @@
             color: orange;
             text-shadow: 1px 0 10px black;
         }
+
+        ul {
+            display: flex !important;
+            list-style-type: none;
+        }
+
+        body {
+            background-image: url(https://lh3.googleusercontent.com/f2-rkR-C1cl5lkhnE2DSZyXUGp2FDh-_0tMjUQJN5jwofhVSBSg-F5eicKlv2P2TiGDPBk84clFEqelZsJAfEAow67SfSkE_NYSCGVUp4lpMjSJIJiXVv3sKpUTQSHLURUmQlWdQLA=w2400);
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!--読み込み完了-->
@@ -37,51 +46,62 @@
         <input type="text" name="search" value="" id="search" />
     </form>
     <!--検索ボックス終了-->
-    <!--テーブル開始-->
-    <table class="table table-striped text-nowrap">
-        <tbody>
-
-            <script>
-                //quicksearchstart関数を宣言
-                function quicksearchstart() {
-                    $(function () {
-                        //検索先を宣言
-                        $('input#search').quicksearch('table tbody tr');
-                    });
-                }
+    <ul class="row" id="tableoutput">
+        <script>
+            function quicksearchstart() {
                 $(function () {
-                    //JSONを読み込み
-                    $.getJSON("https://script.google.com/macros/s/AKfycbwwxRpMYGs6gx7bQbUIfF1seUYyjIJ1E9HU4vLf5Y2mNGuW96ys/exec", function (ongakudata) {
-                        //テーブル表示ループ
-                        for (var i in ongakudata) {
-                            var table = '<tr class="border　search-target">'
-                                + '<td scope="row">' + ongakudata[i].pref_name + '</td>'
-                                + '<td>' + ongakudata[i].song_title + '</td>'
-                                + '<td>' + ongakudata[i].playing_type + '</td>'
-                                + '<td>' + ongakudata[i].instrument_and_voice_timbre + '</td>'
-                                + '<td>' + ongakudata[i].music_feature + '</td>'
-                                + '<td>' + ongakudata[i].discovery_impression + '</td>'
-                                + '<td>' + ongakudata[i].related_festival_and_event_what_month_where + '</td>'
-                                + '<td>' + ongakudata[i].beginning_and_origin + '</td>'
-                                + '<td>' + ongakudata[i].reference_url + '</td>'
-                                + '<td>' + ongakudata[i].youtube_url + '</td></tr>'
-                                //完成したhtmlをoutput
-                            $("tbody").append(table);
-                        }
-                        //検索機能実行
-                        quicksearchstart();
-                    });
+                    $('input#search').quicksearch('ul li');
                 });
-
-            </script>
-        </tbody>
-    </table>
-    <!--テーブル終了-->
+            }
+            $(function () {
+                //JSONを読み込み
+                $.getJSON("https://script.google.com/macros/s/AKfycbwwxRpMYGs6gx7bQbUIfF1seUYyjIJ1E9HU4vLf5Y2mNGuW96ys/exec", function (ongakudata) {
+                    //テーブル表示ループ
+                    for (var i in ongakudata) {
+                        var list = '<li class="col-4">'
+                            + '            <div class="card">'
+                            + '                <div class="card-body">'
+                            + '                    <h4 class="card-title">' + ongakudata[i].song_title + '</h4>'
+                            + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[i].pref_name + '</h5>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">音楽の特徴</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[i].music_feature + '</p>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">発見・感想</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[i].discovery_impression + '</p>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">始まりや由来</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[i].beginning_and_origin + '</p>'
+                            + '                </div>'
+                            + '                <ul class="list-group list-group-flush">'
+                            + '                    <li class="list-group-item">演奏の形:　' + ongakudata[i].playing_type + '</li>'
+                            + '                    <li class="list-group-item">楽器や声の音色: ' + ongakudata[i].instrument_and_voice_timbre + '</li>'
+                            + '                    <li class="list-group-item">関連の祭りやイベント（何月ごろ、どこで）:</br /> ' + ongakudata[i].related_festival_and_event_what_month_where + '</li>'
+                            + '                    <li class="list-group-item">参考URL:　<a href="' + ongakudata[i].reference_url + '">みる</a></li>'
+                            + '                    <li class="list-group-item">YoutubeURL:　<a href="' + ongakudata[i].youtube_url + '">みる</a></li>'
+                            + '                </ul>'
+                            + '            </div>'
+                            + '        </li>';
+                        //完成したhtmlをoutput
+                        $("#tableoutput").append(list);
+                        quicksearchstart();
+                    }
+                });
+            });
+        </script>
+    </ul>
     <!--読み込み開始-->
     <!--Bootstrap動作用ライブラリ(popper-1.14.7)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"ntegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"　crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        ntegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        　crossorigin="anonymous"></script>
     <!--BootstrapJS本体(4.3.1)-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"　integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"　crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        　integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        　crossorigin="anonymous"></script>
     <!--検索機能の読み込み-->
     <script src="quick.js"></script>
     <script>
