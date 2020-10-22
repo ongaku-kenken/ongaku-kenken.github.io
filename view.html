@@ -41,36 +41,50 @@
         </div>
     </header>
     <!--ヘッダー終了-->
-    <!--検索ボックス-->
-    <form action="#">
-        <input type="text" name="search" value="" id="search" />
-    </form>
     <!--検索ボックス終了-->
     <ul class="row" id="tableoutput">
         <script>
-            function quicksearchstart() {
-                $(function () {
-                    $('input#search').quicksearch('ul li');
-                });
+            // パラメータ取得関数
+            function getParam(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
             }
             $(function () {
                 //JSONを読み込み
                 $.getJSON("https://script.google.com/macros/s/AKfycbwwxRpMYGs6gx7bQbUIfF1seUYyjIJ1E9HU4vLf5Y2mNGuW96ys/exec", function (ongakudata) {
-                    //テーブル表示ループ
-                    for (var i in ongakudata) {
-                        var list = '<li class="col-4">'
-                            + '            <div class="card">'
+                    var id = getParam('id');
+                    var data =  '            <div class="card col-12">'
                             + '                <div class="card-body">'
-                            + '                    <h4 class="card-title">' + ongakudata[i].song_title + '</h4>'
-                            + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[i].pref_name + '</h5>'
-                            + '                    <p><a class="btn btn-primary" href="view.html?id=' + i +'" role="button">詳細を見る</a></p>'
+                            + '                    <h4 class="card-title">' + ongakudata[id].song_title + '</h4>'
+                            + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[id].pref_name + '</h5>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">音楽の特徴</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[id].music_feature + '</p>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">発見・感想</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[id].discovery_impression + '</p>'
+                            + '                        <br />'
+                            + '                        <h5 class="text-primary">始まりや由来</h5>'
+                            + '                        <hr />'
+                            + '                        <p class="card-text">' + ongakudata[id].beginning_and_origin + '</p>'
                             + '                </div>'
+                            + '                <ul class="list-group list-group-flush">'
+                            + '                    <li class="list-group-item">演奏の形:　' + ongakudata[id].playing_type + '</li>'
+                            + '                    <li class="list-group-item">楽器や声の音色: ' + ongakudata[id].instrument_and_voice_timbre + '</li>'
+                            + '                    <li class="list-group-item">関連の祭りやイベント（何月ごろ、どこで）:</br /> ' + ongakudata[id].related_festival_and_event_what_month_where + '</li>'
+                            + '                    <li class="list-group-item">参考URL:　<a href="' + ongakudata[id].reference_url + '">みる</a></li>'
+                            + '                    <li class="list-group-item">YoutubeURL:　<a href="' + ongakudata[id].youtube_url + '">みる</a></li>'
+                            + '                </ul>'
                             + '            </div>'
-                            + '     </li>';
-                        //完成したhtmlをoutput
-                        $("#tableoutput").append(list);
-                        quicksearchstart();
-                    }
+                            + '        </li>';
+                    $('#tableoutput').append(data);
                 });
             });
         </script>
