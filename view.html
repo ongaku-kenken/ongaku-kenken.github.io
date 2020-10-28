@@ -65,7 +65,7 @@
             }
             $(function () {
                 //JSONを読み込み
-                $.getJSON("https://script.google.com/macros/s/AKfycbwwxRpMYGs6gx7bQbUIfF1seUYyjIJ1E9HU4vLf5Y2mNGuW96ys/exec", function (ongakudata) {
+                $.getJSON("https://raw.githubusercontent.com/ongaku-kenken/ongaku-kenken.github.io/master/data/json.json", function (ongakudata) {
                     var id = getParam('id');
                     var data =  '            <div class="card col-12">'
                             + '                <div class="card-body">'
