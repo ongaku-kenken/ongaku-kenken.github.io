@@ -66,10 +66,12 @@
             $(function () {
                 //JSONを読み込み
                 $.getJSON("https://raw.githubusercontent.com/ongaku-kenken/ongaku-kenken.github.io/master/data/json.json", function (ongakudata) {
+                    //パラメーター[id]を取得
                     var id = getParam('id');
+                    //HTMLデータを作成
                     var data =  '            <div class="card col-12">'
                             + '                <div class="card-body">'
-                            + '                    <h4 class="card-title">' + ongakudata[id].song_title + '</h4>'
+                            + '                    <h4 class="card-title　text-center">' + ongakudata[id].song_title + '</h4>'
                             + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[id].pref_name + '</h5>'
                             + '                        <br />'
                             + '                        <h5 class="text-primary">音楽の特徴</h5>'
