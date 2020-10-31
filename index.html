@@ -7,14 +7,18 @@
     <!--Google翻訳ブロック-->
     <meta name="google" value="notranslate" />
     <title>地域につたわる音楽に親しもう！</title>
+    <!--説明-->
+    <meta name=”description” content=”とある小学4年生が制作・運営中の、学校の音楽の授業で調べたことのデータベースです。”>
     <!--読み込み開始-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         　integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
     <style>
         .jumbotron {
-            background-image: url(https://lh3.googleusercontent.com/0I7sY9S1lmMONPz57YL7JzC6WBKdTr6U408GXXwNbCX9KjU-ADrM5KYP18vjQo9OlZIIBs79LhsaWQr3cTOAwLa1RnvaBEodjv6Rwc5S-FKhB1__tziahywskTCf4f40nYcO1yUD5w);
-            color: orange;
+            background-image: url(https://lh3.googleusercontent.com/jN1-puM6X0v8tgM1rex87TwNqsvR6rkvQMhnS4uvZzZbN1TppKPy4aCBas4-xv6ubnWFx0lAM5hYEjETeHcpi-v3UE8FK0IZhHPUUMm2aVpwWKBEPm3f_57imnshaDdEq-r-fzN7pA=w2400);
+
+            background-size: contain;
+            color: rgb(253, 255, 120);
             text-shadow: 1px 0 10px black;
         }
 
@@ -24,20 +28,21 @@
         }
 
         body {
-            background-image: url(https://lh3.googleusercontent.com/K0PAxEv-tlTDA7rvNoYeBnX3Qi_d6HG95BxIKgm5M59QHO2m8EgMgspo33Va8gg4zboXgZt9J76ORasbNv4PNtpRNr4wk3VH0rk0dr_4OE4IlMjtV6QZwp4k4ywdcXXQuIATSSKqIg=w2400);
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            background-image: url(https://lh3.googleusercontent.com/oAVfdGEMFMvTfYzBN9Y4AnQ-yK486EibEeOH7W2CGXpoM-72ZAqZJ5gBcojIh5cof9IqWHQB1iRFHXxd44dz4E_baw1HBJJh-HaVoML-SeC0y8F6WH2ivYpQdv8YjX7w0K4IazQGxw=w2400);
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!--読み込み完了-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JT7152WEFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JT7152WEFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-JT7152WEFY');
-</script>
+        gtag('config', 'G-JT7152WEFY');
+    </script>
 </head>
 
 <body>
@@ -52,7 +57,7 @@
     <!--ヘッダー終了-->
     <!--検索ボックス-->
     <form action="#">
-        <input type="text" name="search" value="" id="search" placeholder="都道府県名を入力"/>
+        <input type="text" name="search" value="" id="search" placeholder="都道府県名を入力" />
     </form>
     <!--検索ボックス終了-->
     <ul class="row" id="tableoutput">
@@ -72,7 +77,7 @@
                             + '                <div class="card-body">'
                             + '                    <h4 class="card-title">' + ongakudata[i].song_title + '</h4>'
                             + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[i].pref_name + '</h5>'
-                            + '                    <p><a class="btn btn-primary" href="view.html?id=' + i +'" role="button">詳細を見る</a></p>'
+                            + '                    <p><a class="btn btn-primary" href="view.html?id=' + i + '" role="button">詳細を見る</a></p>'
                             + '                </div>'
                             + '            </div>'
                             + '     </li>';

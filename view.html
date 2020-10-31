@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Google翻訳ブロック-->
     <meta name="google" value="notranslate" />
-    <title>地域につたわる音楽に親しもう！</title>
+    <title>地域につたわる音楽に親しもう！　｜　データ表示</title>
+    <meta name=”description” content=”とある小学4年生が制作・運営中の、学校の音楽の授業で調べたことのデータベースです。”>
     <!--読み込み開始-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         　integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
     <style>
         .jumbotron {
-            background-image: url(https://lh3.googleusercontent.com/0I7sY9S1lmMONPz57YL7JzC6WBKdTr6U408GXXwNbCX9KjU-ADrM5KYP18vjQo9OlZIIBs79LhsaWQr3cTOAwLa1RnvaBEodjv6Rwc5S-FKhB1__tziahywskTCf4f40nYcO1yUD5w);
+            background-image: url(https://lh3.googleusercontent.com/jN1-puM6X0v8tgM1rex87TwNqsvR6rkvQMhnS4uvZzZbN1TppKPy4aCBas4-xv6ubnWFx0lAM5hYEjETeHcpi-v3UE8FK0IZhHPUUMm2aVpwWKBEPm3f_57imnshaDdEq-r-fzN7pA=w2400);
             color: orange;
             text-shadow: 1px 0 10px black;
         }
@@ -24,28 +25,33 @@
         }
 
         body {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
             background-image: url(https://lh3.googleusercontent.com/f2-rkR-C1cl5lkhnE2DSZyXUGp2FDh-_0tMjUQJN5jwofhVSBSg-F5eicKlv2P2TiGDPBk84clFEqelZsJAfEAow67SfSkE_NYSCGVUp4lpMjSJIJiXVv3sKpUTQSHLURUmQlWdQLA=w2400);
+        }
+
+        .card-title {
+            text-align: center;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JT7152WEFY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JT7152WEFY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-JT7152WEFY');
-</script>
+        gtag('config', 'G-JT7152WEFY');
+    </script>
     <!--読み込み完了-->
 </head>
 
-<body>
+<body class="container-fluid">
     <!--ヘッダー開始-->
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
-                <h2 class="display-4">地域に伝わる音楽にしたしもう！</h2>
+                <h1 class="display-4">地域に伝わる音楽にしたしもう！</h2>
             </div>
         </div>
     </header>
@@ -69,37 +75,53 @@
                     //パラメーター[id]を取得
                     var id = getParam('id');
                     //HTMLデータを作成
-                    var data =  '            <div class="card col-12">'
-                            + '                <div class="card-body">'
-                            + '                    <h4 class="card-title　text-center">' + ongakudata[id].song_title + '</h4>'
-                            + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[id].pref_name + '</h5>'
-                            + '                        <br />'
-                            + '                        <h5 class="text-primary">音楽の特徴</h5>'
-                            + '                        <hr />'
-                            + '                        <p class="card-text">' + ongakudata[id].music_feature + '</p>'
-                            + '                        <br />'
-                            + '                        <h5 class="text-primary">発見・感想</h5>'
-                            + '                        <hr />'
-                            + '                        <p class="card-text">' + ongakudata[id].discovery_impression + '</p>'
-                            + '                        <br />'
-                            + '                        <h5 class="text-primary">始まりや由来</h5>'
-                            + '                        <hr />'
-                            + '                        <p class="card-text">' + ongakudata[id].beginning_and_origin + '</p>'
-                            + '                </div>'
-                            + '                <ul class="list-group list-group-flush">'
-                            + '                    <li class="list-group-item">演奏の形:　' + ongakudata[id].playing_type + '</li>'
-                            + '                    <li class="list-group-item">楽器や声の音色: ' + ongakudata[id].instrument_and_voice_timbre + '</li>'
-                            + '                    <li class="list-group-item">関連の祭りやイベント（何月ごろ、どこで）:</br /> ' + ongakudata[id].related_festival_and_event_what_month_where + '</li>'
-                            + '                    <li class="list-group-item">参考URL:　<a href="' + ongakudata[id].reference_url + '">みる</a></li>'
-                            + '                    <li class="list-group-item">YoutubeURL:　<a href="' + ongakudata[id].youtube_url + '">みる</a></li>'
-                            + '                </ul>'
-                            + '            </div>'
-                            + '        </li>';
+                    var data = '            <div class="card col-12">'
+                        + '                <div class="card-body">'
+                        + '                    <h4 class="card-title">' + ongakudata[id].song_title + '</h4>'
+                        + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[id].pref_name + '</h5>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">音楽の特徴</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].music_feature + '</p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">発見・感想</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].discovery_impression + '</p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">始まりや由来</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].beginning_and_origin + '</p>'
+                        + '                        <h5 class="text-primary">演奏の形</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].playing_type + '</p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">楽器や声の音色</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].instrument_and_voice_timbre + '</p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">関連の祭りやイベント(何月ごろ、どこで)</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text">' + ongakudata[id].related_festival_and_event_what_month_where + '</p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">参考URL</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text"><a href="' + ongakudata[id].reference_url + '"target="_blank">みる</a></p>'
+                        + '                        <br />'
+                        + '                        <h5 class="text-primary">YoutubeURL</h5>'
+                        + '                        <hr />'
+                        + '                        <p class="card-text"><a href="' + ongakudata[id].youtube_url + '" target="_blank">みる</a></p>'
+                        + '                        <br />'
+                        + '                </div>'
+                        + '            </div>'
+                        + '        </li>';
                     $('#tableoutput').append(data);
                 });
             });
         </script>
     </ul>
+    <div class="row">
+        <a class="btn btn-primary">別の曲を見る</a>
+    </div>
     <!--読み込み開始-->
     <!--Bootstrap動作用ライブラリ(popper-1.14.7)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
