@@ -1755,7 +1755,8 @@
   
   .form-control {
     display: block;
-    width: 100%;
+    width: 300px;
+    margin-left:40px;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
