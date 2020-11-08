@@ -384,7 +384,6 @@
     font-size: 3.5rem;
     font-weight: 300;
     line-height: 1.2
-    margin-left: 100px;
   }
   
   hr {
@@ -516,7 +515,7 @@
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: 50px;
   }
   
   @media (min-width:576px) {
