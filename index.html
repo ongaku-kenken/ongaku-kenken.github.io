@@ -8,65 +8,9 @@
     <!--説明-->
     <meta name=”description” content=”岐阜大学教育学部附属小中学校の4年生が制作・運営中の、学校の音楽の授業で「地域に伝わる音楽」について調べた情報のデータ一覧です。”>
     <!--読み込み開始-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        　integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
-    <style>
-.jumbotron {
-            background-image: url(img/bg-top.jpg);
-    
-            color: rgb(253, 255, 120);
-            text-shadow: 1px 0 10px black;
-        }
-
-        ul {
-            display: flex !important;
-            list-style-type: none;
-        }
-
-        body {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            background-image: url(https://lh3.googleusercontent.com/oAVfdGEMFMvTfYzBN9Y4AnQ-yK486EibEeOH7W2CGXpoM-72ZAqZJ5gBcojIh5cof9IqWHQB1iRFHXxd44dz4E_baw1HBJJh-HaVoML-SeC0y8F6WH2ivYpQdv8YjX7w0K4IazQGxw=w2400);
-        }
-
-        input#search {
-            border: 2px solid #CCC;
-            border-radius: 10px;
-            box-shadow: none;
-            text-align: center;
-            width: 100%;
-            margin-left: 40px;
-            margin-right: 5px;
-        }
-        .col {
-            padding: 0;
-            width: 0;
-        }
-        .guide{
-        font-size: 20px;
-        color: black;
-        background: rgba(255,255,255,0.70);
-        text-align: center;
-        margin-left: 120px;
-        margin-right: 120px;
-        }
-        .credit{
-        font-size: 8px;
-        color: black;
-        background: rgba(255,255,255,0.70);
-        text-align: center;
-        margin-left: 1100px;
-        margin-right: 40px;
-        margin-top: 0px;
-        }
-       .copyright {
-        font-size: 14px;
-        color: black;
-        background: rgba(255,255,255,0.8);
-        text-align: center;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@2.0.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/my.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <!--読み込み完了-->
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -100,48 +44,20 @@
     </form>
     <!--検索ボックス終了-->
     <ul class="row" id="tableoutput">
-        <script>
-            function quicksearchstart() {
-                $(function () {
-                    $('input#search').quicksearch('ul li');
-                });
-            }
-            $(function () {
-                //JSONを読み込み
-                $.getJSON("https://raw.githubusercontent.com/ongaku-kenken/ongaku-kenken.github.io/master/data/json.json", function (ongakudata) {
-                    //テーブル表示ループ
-                    for (var i in ongakudata) {
-                        var list = '<li class="col-12 col-lg-3" style="margin-bottom: 3px;">'
-                            + '            <div class="card">'
-                            + '                <div class="card-body">'
-                            + '                    <h4 class="card-title">' + ongakudata[i].song_title + '</h4>'
-                            + '                    <h5 class="card-title text-right text-secondary">' + ongakudata[i].pref_name + '</h5>'
-                            + '                    <p><a class="btn btn-primary" href="view.html?id=' + i + '" role="button">詳細を見る</a></p>'
-                            + '                </div>'
-                            + '            </div>'
-                            + '     </li>';
-                        //完成したhtmlをoutput
-                        $("#tableoutput").append(list);
-                        quicksearchstart();
-                    }
-                });
-            });
-        </script>
+        <script src="js/search.js"></script>
     </ul>
     <footer>
         <p class="copyright">©️2020岐阜大学教育学部附属小中学校4年生</p>
     </footer>
     <!--読み込み開始-->
     <!--Bootstrap動作用ライブラリ(popper-1.14.7)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        ntegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        　crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@2.0.1/js/popper.js"></script>
     <!--BootstrapJS本体(4.3.1)-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         　integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         　crossorigin="anonymous"></script>
     <!--検索機能の読み込み-->
-    <script src="quick.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@2.0.1/js/quick.js"></script>
     <script>
 
     </script>
