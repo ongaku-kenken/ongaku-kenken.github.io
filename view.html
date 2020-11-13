@@ -1,53 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
-
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Google翻訳ブロック-->
-    <meta name="google" value="notranslate" />
-    <title>地域につたわる音楽に親しもう！　｜　データ表示</title>
-    <meta name=”description” content=”ケンケン(小学4年生)が制作・運営中の、岐阜大学教育学部附属小学校の音楽の授業で調べたことのデータベース閲覧画面です。”>
+    <title>地域につたわる音楽に親しもう！</title>
+    <!--説明-->
+    <meta name=”description” content=”岐阜大学教育学部附属小中学校の4年生が制作・運営中の、学校の音楽の授業で「地域に伝わる音楽」について調べた情報のデータ一覧です。”>
     <!--読み込み開始-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        　integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
-    <style>
-        .jumbotron {
-            background-image: url(https://lh3.googleusercontent.com/jN1-puM6X0v8tgM1rex87TwNqsvR6rkvQMhnS4uvZzZbN1TppKPy4aCBas4-xv6ubnWFx0lAM5hYEjETeHcpi-v3UE8FK0IZhHPUUMm2aVpwWKBEPm3f_57imnshaDdEq-r-fzN7pA=w2400);
-            color: orange;
-            text-shadow: 1px 0 10px black;
-        }
-
-        ul {
-            display: flex !important;
-            list-style-type: none;
-        }
-
-        body {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
-            background-image: url(https://lh3.googleusercontent.com/f2-rkR-C1cl5lkhnE2DSZyXUGp2FDh-_0tMjUQJN5jwofhVSBSg-F5eicKlv2P2TiGDPBk84clFEqelZsJAfEAow67SfSkE_NYSCGVUp4lpMjSJIJiXVv3sKpUTQSHLURUmQlWdQLA=w2400);
-        }
-
-        .card-title {
-            text-align: center;
-        }
-    </style>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/my.css">
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/js/jquery.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JT7152WEFY"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-JT7152WEFY');
-    </script>
-    <!--読み込み完了-->
+    <script>window.dataLayer = window.dataLayer || [];function gtag() { dataLayer.push(arguments); }gtag('js', new Date());gtag('config', 'G-JT7152WEFY');</script>
 </head>
 
-<body class="container-fluid">
-    <!--ヘッダー開始-->
+<body>
+    !--ヘッダー開始-->
     <header>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
@@ -71,7 +41,7 @@
             }
             $(function () {
                 //JSONを読み込み
-                $.getJSON("https://raw.githubusercontent.com/ongaku-kenken/ongaku-kenken.github.io/master/data/json.json", function (ongakudata) {
+                $.getJSON("https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/data/json.json", function (ongakudata) {
                     //パラメーター[id]を取得
                     var id = getParam('id');
                     //HTMLデータを作成
@@ -122,20 +92,9 @@
     <div class="row">
         <a class="btn btn-primary" href="/index.html">別の曲を見る</a>
     </div>
-    <!--読み込み開始-->
-    <!--Bootstrap動作用ライブラリ(popper-1.14.7)-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        ntegrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        　crossorigin="anonymous"></script>
-    <!--BootstrapJS本体(4.3.1)-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        　integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        　crossorigin="anonymous"></script>
-    <!--検索機能の読み込み-->
-    <script src="quick.js"></script>
-    <script>
-
-    </script>
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/js/popper.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ongaku-kenken/ongaku-kenken.github.io@5.0.0/js/quick.js"></script>
 </body>
 
 </html>
