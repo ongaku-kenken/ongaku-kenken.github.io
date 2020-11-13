@@ -1,0 +1,53 @@
+.jumbotron {
+    background-image: url(img/bg-top.jpg);
+
+    color: rgb(253, 255, 120);
+    text-shadow: 1px 0 10px black;
+}
+
+ul {
+    display: flex !important;
+    list-style-type: none;
+}
+
+body {
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-image: url(https://lh3.googleusercontent.com/oAVfdGEMFMvTfYzBN9Y4AnQ-yK486EibEeOH7W2CGXpoM-72ZAqZJ5gBcojIh5cof9IqWHQB1iRFHXxd44dz4E_baw1HBJJh-HaVoML-SeC0y8F6WH2ivYpQdv8YjX7w0K4IazQGxw=w2400);
+}
+
+input#search {
+    border: 2px solid #CCC;
+    border-radius: 10px;
+    box-shadow: none;
+    text-align: center;
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 5px;
+}
+.col {
+    padding: 0;
+    width: 0;
+}
+.guide{
+font-size: 20px;
+color: black;
+background: rgba(255,255,255,0.70);
+text-align: center;
+margin-left: 120px;
+margin-right: 120px;
+}
+.credit{
+font-size: 8px;
+color: black;
+background: rgba(255,255,255,0.70);
+text-align: center;
+margin-left: 1100px;
+margin-right: 40px;
+margin-top: 0px;
+}
+.copyright {
+font-size: 14px;
+color: black;
+background: rgba(255,255,255,0.8);
+text-align: center;
+}
