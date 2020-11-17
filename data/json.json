@@ -442,19 +442,6 @@
     "youtube_url": "https://youtu.be/VcLY0boVOcc"
   },
   {
-    "タイムスタンプ": "2020-11-10T01:16:01.631Z",
-    "pref_name": "高知県(こうちけん)",
-    "song_title": "よさこい節",
-    "playing_type": "郷土芸能",
-    "instrument_and_voice_timbre": "太鼓",
-    "music_feature": "空白がある",
-    "discovery_impression": "歌舞伎みたい",
-    "related_festival_and_event_what_month_where": "6月9日",
-    "beginning_and_origin": "南国高知産業大博覧会が由来",
-    "reference_url": "http://www.cciweb.or.jp/kochi/yosakoiweb/",
-    "youtube_url": "https://movie-a.nhk.or.jp/sns/ijP/e21a9w1e.html"
-  },
-  {
     "タイムスタンプ": "2020-11-10T01:16:00.548Z",
     "pref_name": "新潟県(にいがたけん)",
     "song_title": "きつねのよめいり",
@@ -466,6 +453,19 @@
     "beginning_and_origin": "この地域の嫁入りは夕方から夜にかけておこなわれたため提灯をさげて嫁入り先に行列していた。この行列が麒麟山の峠を越えていくときに提灯のあかりと狐火がへいこうしたことからこの祭りができた。",
     "reference_url": "https://ja.wikipedia.org/wiki/%E7%8B%90%E3%81%AE%E5%AB%81%E5%85%A5%E3%82%8A",
     "youtube_url": "https://www.youtube.com/watch?v=_tTBMv-K59w"
+  },
+  {
+    "タイムスタンプ": "2020-11-10T01:16:01.631Z",
+    "pref_name": "高知県(こうちけん)",
+    "song_title": "よさこい節",
+    "playing_type": "郷土芸能",
+    "instrument_and_voice_timbre": "太鼓",
+    "music_feature": "空白がある",
+    "discovery_impression": "歌舞伎みたい",
+    "related_festival_and_event_what_month_where": "6月9日",
+    "beginning_and_origin": "南国高知産業大博覧会が由来",
+    "reference_url": "http://www.cciweb.or.jp/kochi/yosakoiweb/",
+    "youtube_url": "https://movie-a.nhk.or.jp/sns/ijP/e21a9w1e.html"
   },
   {
     "タイムスタンプ": "2020-11-17T01:19:47.014Z",
