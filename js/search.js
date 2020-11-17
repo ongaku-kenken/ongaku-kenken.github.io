@@ -5,7 +5,7 @@ function quicksearchstart() {
 }
 $(function () {
     //JSONを読み込み
-    $.getJSON("https://github.com/ongaku-kenken/ongaku-kenken.github.io/raw/master/data/json.json", function (ongakudata) {
+    $.getJSON("https://raw.githubusercontent.com/ongaku-kenken/ongaku-kenken.github.io/master/data/json.json", function (ongakudata) {
         //テーブル表示ループ
         for (var i in ongakudata) {
             var list = '<li class="col-12 col-lg-3" style="margin-bottom: 3px;">'
